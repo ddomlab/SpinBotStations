@@ -1,4 +1,4 @@
-from .image_station import ImageStation
-from .sdc import SDC
+from .image_station import imagestation
+from .sdc import sdc
 
-__all__ = ['ImageStation', 'SDC']
+__all__ = ['imagestation', 'sdc']

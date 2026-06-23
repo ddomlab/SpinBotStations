@@ -1,4 +1,4 @@
-from SpinbotStations import ImageStation
+from SpinbotStations import imagestation
 
-station = ImageStation()
+station = imagestation()
 station.capture_image()

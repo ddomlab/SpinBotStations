@@ -1,7 +1,7 @@
 import cv2, os
 from datetime import datetime
 
-class ImageStation:
+class imagestation:
     def __init__(self, camera_index=0, capture_dir=None):
         self.cap = cv2.VideoCapture(camera_index)
 

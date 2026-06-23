@@ -1,4 +1,4 @@
-class SDC:
+class sdc:
     def __init__(self):
         from matterlab_pumps import RunzePump
         self.pump = RunzePump(
