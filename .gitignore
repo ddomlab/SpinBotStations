@@ -1,6 +1,6 @@
-captures/
+Server/captures/
 .vscode/
 .env
-/home/image-station/code/SpinbotStations/__pycache__
+/home/image-station/code/Server/SpinbotStations/__pycache__
 *.pyc
 .gitignore

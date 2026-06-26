@@ -9,7 +9,7 @@ Routes:
 """
 
 from flask import Flask, request, send_file, abort
-from auth import require_api_key
+from auth import require_http_api_key
 from SpinbotStationsDrivers import imagestation
 import io
 
@@ -20,8 +20,8 @@ station = imagestation()
 def index():
     return "Welcome to landing page!"
 
-@app.route("/imagestation")
-@require_api_key
+@app.route("/image-station")
+@require_http_api_key
 def run():
     match request.headers['instruction']:
         case 'ping':

@@ -11,12 +11,14 @@ from flask import request, abort
 from dotenv import load_dotenv
 
 load_dotenv()
-API_KEY = os.environ.get("API_KEY")
+HTTP_KEY = os.environ.get("HTTP_API_KEY")
+ELN_KEY = os.environ.get("ELN_API_KEY")
 
-if not API_KEY:
-    raise RuntimeError("API_KEY is not set. Please set before continuing")
 
-def require_api_key(route_function):
+if not HTTP_KEY:
+    raise RuntimeError("HTTP_API_KEY is not set. Please set before continuing")
+
+def require_http_api_key(route_function):
     @wraps(route_function)
     def wrapper(*args, **kwargs):
         sent_key = request.headers.get("X-API-Key")
@@ -25,8 +27,8 @@ def require_api_key(route_function):
         if sent_key is None:
             abort(401, description="Missing X-API-Key header")
 
-        if sent_key != API_KEY:
-            abort(401, description="Invalid API key")
+        if sent_key != HTTP_KEY:
+            abort(401, description="Invalid HTTP API key")
         
         return route_function(*args, **kwargs)
     return wrapper

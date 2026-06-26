@@ -58,3 +58,4 @@ class imagestation:
                 + frame_bytes +
                 b'\r\n'
             )
+
