@@ -1,6 +1,6 @@
 import os
 from dotenv import load_dotenv
-from SpinbotStations import imagestation, eln
+from SpinbotStations import imagestation
 
 load_dotenv()
 
